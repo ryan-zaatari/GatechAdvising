@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "parent_template.html" %}
+
+{% block title %} Schedule MSE: Home {% endblock %}
+
+{% block link %} <link rel="stylesheet" type="text/css" href="../static/css/home.css"> {% endblock %}
+
+{% block content %}
+<h1>Welcome!</h1>
+<p style = "width: 60%;">This is the MSE Advising website created to help you find students, their plans, and modify them accordingly to ensure a timely graduation. Below you will find two buttons you can use to navigate through the website. The students button will take you to a display of students that have or have not submitted their plans for the current semester. The courses button will navigate you to a page to view available courses for the upcoming semester. You can return to the home page by pressing "Home" on the navigation bar above. Enjoy!</p>
+<div class="list-group list-group-horizontal col-xs-8">
+    <form method="get" action="/to_students" style = "margin-right: 25px;">
+        <button class="button-viewStudents">View Students</button>
+    </form>
+    <form method="get" action="/to_courses">
+        <button class="button-viewCourses">View Courses</button>
+    </form>
+</div>
+{% endblock %}
+
+</html>

@@ -1,0 +1,24 @@
+{% extends "parent_template.html" %}
+
+{% block content %}
+
+<h1>Modify Plan</h1>
+<h2>{{name}}</h2>
+<h2>Semester of Plan: {{plan_semester}}</h2>
+<br></br>
+<form action="" method="POST">
+    <dl>
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            {% if field.widget.input_type == 'submit' %}
+                <dt>{{ field(class="btn btn-success") }}
+            {% else %}
+                <dt>{{ field.label(class="form-label") }}
+                <dt>{{ field(class="form-control") }}
+                <br>
+            {% endif %}
+        {% endfor %}
+    </dl>
+</form>
+
+{% endblock %}

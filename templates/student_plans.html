@@ -1,0 +1,34 @@
+{% extends "parent_template.html" %}
+
+{% block content %}
+<h1 style="margin-bottom: 15px;">{{name}} Plans</h1>
+
+<table class="table table-hove table-striped table-secondary">
+    <thead>
+        <tr>
+            {% for name in fields %}
+            <th scope="col">{{name}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for plan in plans %}
+        <tr>
+            <td>{{plan.expected_graduation}}</td>
+            <td>{{plan.date_submitted}}</td>
+            <td>{{plan.semester}}</td>
+            <td>{{plan.credit_hours}}</td>
+            <td>{{plan.course1}}</td>
+            <td>{{plan.course2}}</td>
+            <td>{{plan.course3}}</td>
+            <td>{{plan.course4}}</td>
+            <td>{{plan.course5}}</td>
+            <td>{{plan.course6}}</td>
+            <td>{{plan.course7}}</td>
+            <td>{{plan.course8}}</td>
+            <td><a class="btn btn-warning" href="{{url_for('modify_plan', student_name=name, semester=plan.semester)}}">Modify</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

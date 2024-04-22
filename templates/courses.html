@@ -1,0 +1,24 @@
+{% extends "parent_template.html" %}
+
+{% block content %}
+<h1>Courses</h1>
+
+<table class="table table-striped table-secondary">
+    <thead>
+        <tr>
+            {% for name in fields %}
+            <th scope="col">{{name}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for course in courses %}
+        <tr>
+            {% for item in course %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

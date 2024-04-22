@@ -1,0 +1,54 @@
+{% extends "parent_template.html" %}
+
+{% block content %}
+<h1>Students with Plans for Current Semester</h1>
+
+<table class="table table-striped table-secondary">
+    <thead>
+        <tr>
+            {% for name in planned_fields %}
+            <th scope="col">{{name}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students_with_plans %}
+        <tr>
+            {% for i in range(0, student|length, 1) %}
+                {% if i == 0 %}
+                    <td><a class="btn btn-link" style="align-self: center; color:rgb(179, 163, 105);" href="{{url_for('student_page', student_name=student[i])}}">{{student[i]}}</a></td>
+                {% else %}
+                    <td style="padding-top: 15px;">{{student[i]}}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br></br>
+
+<h1>Students without Plans for Current Semester</h1>
+<table class="table table-striped table-secondary">
+    <thead>
+        <tr>
+            {% for name in unplanned_fields %}
+            <th scope="col">{{name}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students_without_plans %}
+        <tr>
+            {% for i in range (0, student|length, 1) %}
+                {% if i == 0 %}
+                    <td><a class="btn btn-link" style="align-self: center; color:rgb(179, 163, 105);" href="{{url_for('student_page', student_name=student[i])}}">{{student[i]}}</a></td>
+                {% else %}
+                    <td style="padding-top: 15px;">{{student[i]}}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

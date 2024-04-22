@@ -1,0 +1,94 @@
+:root {
+    --gt-yellow: rgb(179, 163, 105);
+}
+
+@font-face {
+    font-family: RobotoSlab;
+    src: url("../fonts/RobotoSlab-Regular.ttf");
+}
+
+body {
+    font-family: RobotoSlab;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container-fluid {
+    height: 9vh;
+    background-color: var(--gt-yellow);
+    font-family: RobotoSlab;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-family: RobotoSlab;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin-right: 51vw;
+}
+
+.navbar-brand:hover {
+    color: #f4f4f4;
+}
+
+.d-inline-block.align-text-top {
+    position: fixed;
+    top: 1%;
+    left: .35%;
+}
+
+.navbar-brand-txt-container {
+    padding-left: 5vw;
+    padding-top: .5vh;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #f4f4f4;
+}
+
+.form-control.me-2 {
+    background-color: #f4f4f4;
+}
+
+.btn.btn-outline-success {
+    color: white;
+    border-color: white;
+    transition: color 0.3s;
+    transition: border-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.btn.btn-outline-success:hover {
+    color: var(--gt-yellow);
+    border-color: var(--gt-yellow);
+    background-color: #f4f4f4;
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+}
